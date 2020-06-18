@@ -1,4 +1,5 @@
 ﻿using System;
+using TemplatePattern.Participants;
 
 namespace TemplatePattern
 {
@@ -6,7 +7,11 @@ namespace TemplatePattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var customerData=new CustomerDataAccess();
+            customerData.Run();
+
+            var productData=new ProductDataAccess();
+            productData.Run();
         }
     }
 }
