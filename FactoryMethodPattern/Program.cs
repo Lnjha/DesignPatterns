@@ -1,4 +1,5 @@
 ﻿using System;
+using FactoryMethodPattern.Participants;
 
 namespace FactoryMethodPattern
 {
@@ -6,7 +7,11 @@ namespace FactoryMethodPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var permanentEmployee=EmployeeInstanceCreator.CreateEmployeeInstance("permanent");
+            permanentEmployee.SetPolicy();
+
+            var temproryEmployee=EmployeeInstanceCreator.CreateEmployeeInstance("contract");
+            temproryEmployee.SetPolicy();
         }
     }
 }
