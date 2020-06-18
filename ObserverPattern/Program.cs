@@ -1,4 +1,5 @@
 ﻿using System;
+using ObserverPattern.Participants;
 
 namespace ObserverPattern
 {
@@ -6,7 +7,11 @@ namespace ObserverPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IBMStock iBMStock=new IBMStock("IBM",100);
+            iBMStock.Attach(new Investor("Ram"));
+            iBMStock.Attach(new Investor("Shyam"));
+            iBMStock.Price=200;
+            iBMStock.Price=300.20;
         }
     }
 }
